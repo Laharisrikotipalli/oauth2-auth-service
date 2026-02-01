@@ -8,10 +8,10 @@ const {
   googleAuth,
   googleCallback,
   githubAuth,
-  githubCallback
+  githubCallback,
 } = require("../controllers/auth.controller");
 
-// email/password
+// Email / Password
 router.post("/register", register);
 router.post("/login", login);
 router.post("/refresh", refresh);

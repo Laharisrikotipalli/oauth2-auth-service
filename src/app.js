@@ -1,19 +1,20 @@
 const express = require("express");
+const helmet = require("helmet");
 const cors = require("cors");
-
-const authRoutes = require("./routes/auth.routes");
+const auth = require("./auth");
 
 const app = express();
 
+app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-// health check
 app.get("/health", (req, res) => {
   res.json({ status: "ok" });
 });
 
-// 🔴 THIS LINE IS CRITICAL
-app.use("/api/auth", authRoutes);
+app.post("/api/auth/register", auth.register);
+app.post("/api/auth/login", auth.login);
+app.post("/api/auth/refresh", auth.refresh);
 
 module.exports = app;

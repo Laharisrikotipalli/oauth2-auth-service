@@ -3,6 +3,6 @@ const app = require("./app");
 
 const PORT = process.env.API_PORT || 4000;
 
-app.listen(PORT, "0.0.0.0", () => {
+app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

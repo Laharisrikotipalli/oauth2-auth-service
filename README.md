@@ -182,7 +182,7 @@ All authentication methods ultimately issue **JWT-based access and refresh token
 ### 1. Email & Password Authentication Flow
 
 This flow is used for locally registered users.
-
+```
 Client
 │
 │ POST /api/auth/register
@@ -193,12 +193,10 @@ API Server
 │ store user in PostgreSQL
 ▼
 Database
-
+```
 
 **Login Flow**
-
-
-
+```
 Client
 │
 │ POST /api/auth/login
@@ -215,6 +213,7 @@ accessToken
 
 refreshToken
 
+```
 
 **Key Points**
 - Passwords are never stored in plain text
@@ -226,9 +225,7 @@ refreshToken
 ### 2. Google OAuth Authentication Flow
 
 Used for passwordless authentication via Google.
-
-
-
+```
 Client
 │
 │ GET /api/auth/google
@@ -250,7 +247,7 @@ Client receives:
 accessToken
 
 refreshToken
-
+```
 
 **Behavior**
 - First login creates a new user
@@ -262,9 +259,7 @@ refreshToken
 ### 3. GitHub OAuth Authentication Flow
 
 Similar to Google OAuth but using GitHub as the provider.
-
-
-
+```
 Client
 │
 │ GET /api/auth/github
@@ -286,7 +281,7 @@ Client receives:
 accessToken
 
 refreshToken
-
+```
 
 ---
 
@@ -294,8 +289,7 @@ refreshToken
 
 After authentication, all protected routes require a valid access token.
 
-
-
+```
 Client
 │
 │ Authorization: Bearer <accessToken>
@@ -306,7 +300,7 @@ API Server
 │ attach user to request
 ▼
 Protected Route Access
-
+```
 
 **Token Types**
 - **Access Token**
@@ -351,55 +345,6 @@ Both providers redirect the user back to this application after successful autho
 
 ---
 
-## Google OAuth Configuration
-
-### Step 1: Create Google OAuth Credentials
-
-1. Go to **Google Cloud Console**
-2. Create or select a project
-3. Enable **Google Identity Services**
-4. Go to **Credentials → Create Credentials → OAuth Client ID**
-5. Select **Web Application**
-
----
-
-### Step 2: Configure Authorized Redirect URI
-
-Add the following redirect URI **exactly** as shown:
-
-http://localhost:4000/oauth-callback/google
-
-
-⚠️ **Important**
-- The URL must match exactly
-- No trailing slashes
-- HTTP vs HTTPS must match
-
----
-
-### Step 3: Environment Variables
-
-Add the following values to your `.env` file:
-
-GOOGLE_CLIENT_ID=your_google_client_id_here
-GOOGLE_CLIENT_SECRET=your_google_client_secret_here
-
-
----
-
-### Google OAuth Flow Summary
-
-/api/auth/google
-↓
-Google Consent Screen
-↓
-/oauth-callback/google
-↓
-JWT Tokens Issued
-
-
----
-
 ## GitHub OAuth Configuration
 
 ### Step 1: Create GitHub OAuth App
@@ -433,7 +378,7 @@ GITHUB_CLIENT_SECRET=your_github_client_secret_here
 ---
 
 ### GitHub OAuth Flow Summary
-
+```
 /api/auth/github
 ↓
 GitHub Authorization
@@ -441,7 +386,7 @@ GitHub Authorization
 /oauth-callback/github
 ↓
 JWT Tokens Issued
-
+```
 
 ---
 
@@ -577,7 +522,7 @@ GITHUB_CLIENT_SECRET=your_github_client_secret_here
 ---
 
 ### GitHub OAuth Flow Summary
-
+```
 /api/auth/github
 ↓
 GitHub Authorization
@@ -586,7 +531,7 @@ GitHub Authorization
 ↓
 JWT Tokens Issued
 
-
+```
 ---
 
 ## Common OAuth Errors & Fixes

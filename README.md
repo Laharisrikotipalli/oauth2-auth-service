@@ -1,11 +1,11 @@
-# 🔐 OAuth2 Authentication & Authorization Microservice
+# OAuth2 Authentication & Authorization Microservice
 
 A production-ready, fully containerized authentication and authorization service built with **Node.js**, **JWT**, and **OAuth 2.0 (Google & GitHub)**.  
 This project demonstrates secure identity management, role-based access control (RBAC), and scalable backend architecture using Docker.
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
 This service acts as a centralized **authentication microservice** that supports:
 
@@ -20,18 +20,18 @@ This service acts as a centralized **authentication microservice** that supports
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 The application follows a **layered architecture** for maintainability, scalability, and security.
-```
-# 🔐 OAuth2 Authentication & Authorization Microservice
+
+#  OAuth2 Authentication & Authorization Microservice
 
 A production-ready, fully containerized authentication and authorization service built with **Node.js**, **JWT**, and **OAuth 2.0 (Google & GitHub)**.  
 This project demonstrates secure identity management, role-based access control (RBAC), and scalable backend architecture using Docker.
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
 This service acts as a centralized **authentication microservice** that supports:
 
@@ -46,7 +46,7 @@ This service acts as a centralized **authentication microservice** that supports
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 The application follows a **layered architecture** for maintainability, scalability, and security.
 ```
@@ -67,15 +67,15 @@ PostgreSQL (Users & Providers)
 v
 Redis (Rate Limiting / Cache)
 ```
-
-### 📷 Architecture Diagram
+---
+###  Architecture Diagram
 
 ![OAuth2 Authentication Service Architecture](docs/architecture.png)
 
 
 ---
 
-## 🧱 Technology Stack
+## Technology Stack
 
 | Layer | Technology |
 |-----|-----------|
@@ -91,9 +91,9 @@ Redis (Rate Limiting / Cache)
 
 ---
 
-## 🔐 Authentication & Authorization Flow
+##  Authentication & Authorization Flow
 
-### 1️⃣ Local Authentication (Email & Password)
+### 1️ Local Authentication (Email & Password)
 
 1. User registers with email & password
 2. Password is hashed using bcrypt
@@ -103,7 +103,7 @@ Redis (Rate Limiting / Cache)
 
 ---
 
-### 2️⃣ OAuth 2.0 Authentication (Google / GitHub)
+### 2️ OAuth 2.0 Authentication (Google / GitHub)
 
 1. User initiates OAuth login
 2. Redirected to provider (Google/GitHub)
@@ -116,7 +116,7 @@ OAuth accounts are linked via the **auth_providers** table.
 
 ---
 
-### 3️⃣ Role-Based Access Control (RBAC)
+### 3 Role-Based Access Control (RBAC)
 
 | Role | Permissions |
 |----|------------|
@@ -127,7 +127,7 @@ RBAC is enforced using middleware.
 
 ---
 
-## 🗄️ Database Schema
+##  Database Schema
 
 ### users table
 
@@ -154,7 +154,7 @@ RBAC is enforced using middleware.
 
 ---
 
-## 🐳 Docker Setup
+##  Docker Setup
 
 ### Services
 
@@ -264,7 +264,8 @@ Token revocation lists
 CDN for OAuth redirects
 ---
 
-## Submission Credentials
+## Submission 
+```
 {
   "testCredentials": {
     "adminUser": {
@@ -277,3 +278,4 @@ CDN for OAuth redirects
     }
   }
 }
+```

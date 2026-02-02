@@ -62,7 +62,7 @@ Redis (Rate Limiting / Cache)
 | Password Hashing | bcrypt (10 rounds) |
 | Database | PostgreSQL |
 | Cache / Rate Limit | Redis |
-| Security | Helmet, Rate Limiting |
+| Security | Rate Limiting |
 | Containerization | Docker & Docker Compose |
 
 ---

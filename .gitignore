@@ -51,4 +51,4 @@ jest-results.json
 # =========================
 *.pem
 *.key
-package-lock.json
+ package-lock.json

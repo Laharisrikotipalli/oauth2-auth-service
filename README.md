@@ -195,19 +195,21 @@ GITHUB_CLIENT_SECRET=your_github_secret
 
 ## API Endpoints
 ### Public Endpoints
-
+```
 Method	Endpoint	        Description
 POST	/api/auth/register	Register new user
 POST	/api/auth/login	    Login user
 GET	    /api/auth/google	Google OAuth
 GET	    /api/auth/github	GitHub OAuth
-POST	/api/auth/refresh	Refresh JWT
-
+POST	/api/auth/refresh	  Refresh JWT
+```
 ### Protected Endpoints
+```
 Method	Endpoint	     Access
 GET	   /api/users/me	User / Admin
 PATCH  /api/users/me	User / Admin
 GET	   /api/users	    Admin only
+```
 
 ---
 ## Postman Testing Guide
@@ -243,8 +245,6 @@ JWT expiration strategy
 
 Rate limiting (10 requests / minute)
 
-Helmet headers
-
 RBAC middleware
 
 OAuth provider verification
@@ -253,13 +253,13 @@ OAuth provider verification
 
 For millions of users:
 
-Horizontal scaling using Docker/Kubernetes
+-Horizontal scaling using Docker/Kubernetes
 
-Read replicas for PostgreSQL
+-Read replicas for PostgreSQL
 
-Redis clustering
+-Redis clustering
 
-Token revocation lists
+-Token revocation lists
 
 CDN for OAuth redirects
 ---

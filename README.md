@@ -269,8 +269,8 @@ CDN for OAuth redirects
 {
   "testCredentials": {
     "adminUser": {
-      "email": "admin@example.com",
-      "password": "AdminPassword123!"
+      "email": "hari@example.com",
+      "password": "UserPassword123!"
     },
     "regularUser": {
       "email": "user@example.com",

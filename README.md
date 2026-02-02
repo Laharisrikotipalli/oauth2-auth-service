@@ -1,28 +1,4 @@
-# OAuth2 Authentication & Authorization Microservice
 
-A production-ready, fully containerized authentication and authorization service built with **Node.js**, **JWT**, and **OAuth 2.0 (Google & GitHub)**.  
-This project demonstrates secure identity management, role-based access control (RBAC), and scalable backend architecture using Docker.
-
----
-
-##  Project Overview
-
-This service acts as a centralized **authentication microservice** that supports:
-
-- Email & password authentication
-- OAuth 2.0 authentication (Google & GitHub)
-- JWT-based access & refresh tokens
-- Role-Based Access Control (RBAC)
-- Rate limiting to prevent brute-force attacks
-- PostgreSQL for persistent storage
-- Redis for caching and rate limiting
-- Full Docker & Docker Compose orchestration
-
----
-
-##  System Architecture
-
-The application follows a **layered architecture** for maintainability, scalability, and security.
 
 #  OAuth2 Authentication & Authorization Microservice
 

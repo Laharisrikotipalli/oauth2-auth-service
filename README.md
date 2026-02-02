@@ -239,13 +239,13 @@ Authorization: Bearer <adminAccessToken>
 ---
 ## Security Measures
 
-Password hashing with bcrypt
+- Password hashing with bcrypt
 
-JWT expiration strategy
+- JWT expiration strategy
 
-Rate limiting (10 requests / minute)
+- Rate limiting (10 requests / minute)
 
-RBAC middleware
+- RBAC middleware
 
 OAuth provider verification
 
@@ -253,13 +253,13 @@ OAuth provider verification
 
 For millions of users:
 
--Horizontal scaling using Docker/Kubernetes
+- Horizontal scaling using Docker/Kubernetes
 
--Read replicas for PostgreSQL
+- Read replicas for PostgreSQL
 
--Redis clustering
+- Redis clustering
 
--Token revocation lists
+- Token revocation lists
 
 CDN for OAuth redirects
 ---

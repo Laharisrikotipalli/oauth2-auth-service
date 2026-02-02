@@ -46,7 +46,7 @@ Redis (Rate Limiting / Cache)
 ---
 ###  Architecture Diagram
 
-![OAuth2 Authentication Service Architecture](docs/architecture.png)
+![OAuth2 Authentication Service Architecture](docs/auth-architecture.png)
 
 
 ---

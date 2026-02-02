@@ -236,6 +236,7 @@ Admin-Only Endpoint
 GET http://localhost:4000/api/users
 ```
 Authorization: Bearer <adminAccessToken>
+
 ---
 ## Security Measures
 

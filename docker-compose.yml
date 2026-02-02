@@ -1,0 +1,33 @@
+services:
+  app:
+    build: .
+    env_file: .env
+    ports:
+      - "${API_PORT}:${API_PORT}"
+    depends_on:
+      db:
+        condition: service_healthy # Requirement 1: Wait for DB health
+      cache:
+        condition: service_healthy # Requirement 1: Wait for Redis health
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: auth_service
+    healthcheck: # Requirement 1: DB Healthcheck
+      test: ["CMD-SHELL", "pg_isready -U user -d auth_service"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - ./seeds:/docker-entrypoint-initdb.d
+
+  cache:
+    image: redis:7
+    healthcheck: # Requirement 1: Redis Healthcheck
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
